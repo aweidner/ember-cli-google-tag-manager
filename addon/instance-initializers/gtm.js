@@ -1,4 +1,8 @@
 export function initialize(application) {
+  if (typeof FastBoot !== 'undefined') {
+    return;
+  }
+
   // Do not inject anythin in the router if appId is not present
   var environment = application.resolveRegistration('config:environment') || {};
   var config = environment.googleTagManager;
